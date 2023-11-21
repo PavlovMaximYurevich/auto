@@ -1,10 +1,11 @@
-import os
+# import os
 import xml.etree.ElementTree as ET
+from pprint import pprint
 
-from django.core.management import BaseCommand
-
-from auto.settings import BASE_DIR
-from cars.models import Mark, ModelCar
+# from django.core.management import BaseCommand
+#
+# from auto.settings import BASE_DIR
+# from cars.models import Mark, ModelCar
 
 # Парсинг XML-файла
 tree = ET.parse('cars.xml')
@@ -12,16 +13,21 @@ root = tree.getroot()
 
 
 def parser(xml_file):
+    car_dict = {}
     for tag in xml_file.findall('mark'):
         # print(tag.get('name'))
-        Mark.objects.get_or_create(
-            brand_auto=tag.get('name')
-        )
+        key = tag.get('name')
+        list_value = []
         for elem in tag.findall('folder'):
             # print(elem.get('name').split(',')[0])
-            ModelCar.objects.get_or_create(
-                model_auto=elem.get('name').split(',')[0]
-            )
+            list_value.append(elem.get('name').split(',')[0])
+        car_dict[key] = list_value
+
+    return car_dict
 
 
-parser(root)
+CAR_DICT = parser(root)
+pprint(CAR_DICT)
+
+
+
