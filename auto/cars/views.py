@@ -10,8 +10,8 @@ def update_autoru_catalog(request):
     for key, value in CAR_DICT.items():
         auto = Mark.objects.create(brand_auto=key)
 
-        for models in key:
-            model = ModelCar.objects.create(car_model=models, pk)
+        for models in value:
+            model = ModelCar.objects.create(model_pk=auto, car_model=models)
 
     context = {
         'auto': auto,
