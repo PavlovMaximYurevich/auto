@@ -7,6 +7,9 @@ class Mark(models.Model):
         max_length=200
     )
 
+    def __str__(self):
+        return self.brand_auto
+
 
 class ModelCar(models.Model):
     model_pk = models.ForeignKey(
