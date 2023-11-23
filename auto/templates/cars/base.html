@@ -1,4 +1,4 @@
-<!--{% load static %}-->
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <h1>
@@ -9,7 +9,17 @@
         {% block content %}
             {% for md in auto %}
                 <li>
-                    Марка автомобиля {{ md }}
+<!--                    Марка автомобиля {{ md }}-->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Авто
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% for name_auto in md %}
+                                <li><a class="dropdown-item" href="#">{{ name_auto }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </li>
             {% endfor %}
         {% endblock %}
@@ -18,15 +28,3 @@
 </html>
 
 
-<div class="btn-group">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Действие
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Действие</a></li>
-    <li><a class="dropdown-item" href="#">Другое действие</a></li>
-    <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Отделенная ссылка</a></li>
-  </ul>
-</div>
