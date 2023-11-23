@@ -17,6 +17,6 @@ def update_autoru_catalog(request):
         'auto': auto,
         'models': model,
     }
-    return render(request, 'cars/base.html', context)
+    return render(request, 'cars/base.html', context=context)
 
 

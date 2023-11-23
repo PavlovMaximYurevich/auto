@@ -27,7 +27,7 @@ def parser(xml_file):
 
 
 CAR_DICT = parser(root)
-pprint(CAR_DICT)
+# pprint(CAR_DICT)
 
 
 
