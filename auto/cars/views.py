@@ -7,6 +7,7 @@ from .loadxml import CAR_DICT
 
 def update_autoru_catalog(request):
     car_list = []
+    Mark.objects.all().delete()
     for key, value in CAR_DICT.items():
         auto = Mark.objects.create(brand_auto=key)
         car_list.append(auto)
