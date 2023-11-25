@@ -1,80 +1,120 @@
-<!--{% load static %}-->
 <!--<!DOCTYPE html>-->
-<!--<html lang="ru">-->
+<!--<html>-->
 <!--<head>-->
-<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Title</title>-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
 <!--</head>-->
-<!--  <body>-->
-<!--    <main>-->
-<!--        {% block content %}-->
-
-<!--&lt;!&ndash;                    Марка автомобиля {{ md }}&ndash;&gt;-->
-<!--                    <div class="dropdown">-->
-<!--                        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">-->
-<!--                            Auto-->
-<!--                        </button>-->
-
-<!--                        <ul class="dropdown-menu">-->
-<!--&lt;!&ndash;                                {% for md in auto %}&ndash;&gt;-->
-<!--                            <li><a href="#">1</a></li>-->
-<!--                            <li><a class="dropdown-item" href="#">2</a></li>-->
-<!--                            <li><a class="dropdown-item" href="#">3</a></li>-->
-<!--&lt;!&ndash;                                {% endfor %}&ndash;&gt;-->
-<!--                        </ul>-->
-
-<!--                    </div>-->
-<!--        {% endblock %}-->
-<!--    </main>-->
-<!--   &lt;!&ndash; jQuery &ndash;&gt;-->
-<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-<!--  &lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
-<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-<!--  </body>-->
-<!--</html>-->
+<!--<body>-->
 
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
+<!--&lt;!&ndash;  <div class="dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Автомобили <span class="caret"></span></button>&ndash;&gt;-->
+<!--<div class="dropdown">-->
+<!--  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--    Автомобили-->
+<!--  </button>-->
+<!--    <ul class="dropdown-menu">-->
+<!--      {% for name_car in auto %}-->
 
 
 
-<!--  <div class="dropdown">-->
-<!--    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Автомобили <span class="caret"></span></button>-->
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Автомобили
-  </button>
-    <ul class="dropdown-menu">
-      {% for name_car in auto %}
 
 <!--        <li><a href="#">{{ name_car }}</a></li>-->
-        <li><a href="#">{{ name_car }}</a></li>
-<!--        {% for model_car in models.car_model %}-->
-<!--          <li><a href="#">{{ model_car }}</a></li>-->
-<!--        {% endfor %}-->
-        {% for model_car in models %}
-          {% if  models.model_pk == auto.pk %}
-             <li>{{ model_car }}</li>
-          {% endif %}
-<!--          <li><a href="#">{{ model_car }}</a></li>-->
-        {% endfor %}
+<!--&lt;!&ndash;        <li><a href="#">{{ name_car }}</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        {% for model_car in models.car_model %}&ndash;&gt;-->
+<!--&lt;!&ndash;          <li><a href="#">{{ model_car }}</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;        {% for model_car in models %}&ndash;&gt;-->
+<!--&lt;!&ndash;          {% if  models.model_pk == auto.pk %}&ndash;&gt;-->
+<!--&lt;!&ndash;             <li>{{ model_car }}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;          {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <li><a href="#">{{ model_car }}</a></li>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        {% endfor %}&ndash;&gt;-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+
+<!--  </div>-->
+
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<!--</body>-->
+
+
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Автомобили</title>-->
+<!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="dropdown">-->
+<!--  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--    Автомобили-->
+<!--  </button>-->
+<!--  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">-->
+<!--    <div class="btn-group dropend">-->
+<!--      <button type="button" class="btn btn-outline-info">Info</button>-->
+<!--      <ul class="dropdown-menu">-->
+<!--        <li><a href="#">AAAA</a></li>-->
+<!--      </ul>-->
+
+
+<!--</div>-->
+
+
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+<!--</body>-->
+
+<!--</html>-->
+<!--<button type="button" class="btn btn-primary btn-lg">Большая кнопка</button>-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+<div class="dropdown">
+    <button
+            class="btn btn-secondary dropdown-toggle bg-transparent text-dark btn-sm ms-3"
+            type="button"
+            id="MyAccountDDM"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false">
+        Автомобили
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="MyAccountDDM" id="AppDropDownId">
+      {% for name_car in auto %}
+        <li>
+            <div class="btn-group dropend">
+                <a type="button" class="dropdown-item dropdown-toggle p-0" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    {{ name_car }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">DDD</a></li>
+                    <li><a class="dropdown-item" href="#">EEE</a></li>
+                </ul>
+            </div>
+        </li>
+
       {% endfor %}
     </ul>
-
-  </div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
-
-
-
-
 </html>
