@@ -15,7 +15,6 @@ class ModelCar(models.Model):
     model_pk = models.ForeignKey(
         Mark,
         on_delete=models.CASCADE,
-        related_name='auto'
     )
     car_model = models.CharField(
         'Модель автомобиля',

@@ -18,6 +18,7 @@ def update_autoru_catalog(request):
         'auto': Mark.objects.all(),
         'models': ModelCar.objects.all(),
     }
+    # print(auto.id, auto.pk, model.model_pk, models.model_pk)
     return render(request, 'cars/base.html', context=context)
 
 
